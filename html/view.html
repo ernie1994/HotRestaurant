@@ -97,12 +97,14 @@
 
                 //render reservations
                 for (var i = 0; i < data.reservations.length; i++) {
-                    var reservation = `<li class="list-group-item list-group-item-primary">${test}</li>`;
+                    var reservation = `<li class="list-group-item list-group-item-primary">
+                        Name: ${data.reservations[i].name}</li>`;
 
-                    $(".reservation").append(reservation); s
+                    $(".reservation").append(reservation);
                 }
                 for (var i = 0; i < data.waitlist.length; i++) {
-                    var waitlist = `<li class="list-group-item list-group-item-primary">${test}</li>`;
+                    var waitlist = `<li class="list-group-item list-group-item-primary">
+                        Name: ${data.waitlist[i].name}</li>`;
                     $(".waitlist").append(waitlist);
                 }
             })

@@ -1,0 +1,91 @@
+
+.btn--animated{
+    /* .75s is a delay */
+    animation: moveInBottom .5s ease-out .75s;
+    /* applies 0 percent before animation starts */
+    animation-fill-mode: backwards;
+}
+    /* special state */
+.btn:link, .btn:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+        position: relative;
+    }
+    .btn:hover{
+        transform: translateY(-3px);
+        /* x y and blur and color */
+        box-shadow: 0 10px 20px rgba(black,.2);
+      
+    }
+    .btn:hover::after{
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+       /* when clicked */
+   .btn:hover:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(black,.2);
+
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+.btn--white{
+    background-color:#fff;
+    color: #777;
+   
+}
+
+.btn--white::after{
+    background-color: #fff;
+}
+.btn--tang{
+    background-color:#ff6e6e;
+    color: #777;
+   
+}
+
+.btn--tang::after{
+    background-color:#ff6e6e;
+}
+.btn--green{
+    background-color: #55c57a;
+    color: #fff;
+   
+}
+.btn--green::after{
+    background-color: #55c57a;
+}
+.btn-text:link, .btn-text:visited{
+    font-size: 12px;
+    color: #55c57a;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #55c57a;
+    padding: 3px;
+    transition: all .2s;
+}
+.btn-text:hover{
+    background-color: #55c57a;
+    color:#fff;
+    box-shadow: 0 1rem 2rem rgba(black,.2);
+    transform: translateY(-2px);
+}
+.btn-text:active{
+    transform: translateY(0);
+
+}

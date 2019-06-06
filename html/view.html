@@ -46,6 +46,9 @@
                         <h4 class="panel-title">Current Reservations</h4>
                     </div>
                     <div class="panel-body" id="tableSection">
+                        <ul class="list-group reservation">
+
+                        </ul>
                     </div>
                 </div>
 
@@ -55,6 +58,9 @@
                         <h4 class="panel-title">Waiting List</h4>
                     </div>
                     <div class="panel-body" id="waitlistSection">
+                        <ul class="list-group waitlist">
+
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -75,6 +81,33 @@
 
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
+<script>
 
+    $(document).ready(() => {
+
+
+        renderData();
+
+        function renderData() {
+            $.ajax({
+                type: "GET",
+                url: "api/view"
+            }).then((data) => {
+                console.log("got data", data);
+
+                //render reservations
+                for (var i = 0; i < data.reservations.length; i++) {
+                    var reservation = `<li class="list-group-item list-group-item-primary">${test}</li>`;
+
+                    $(".reservation").append(reservation); s
+                }
+                for (var i = 0; i < data.waitlist.length; i++) {
+                    var waitlist = `<li class="list-group-item list-group-item-primary">${test}</li>`;
+                    $(".waitlist").append(waitlist);
+                }
+            })
+        }
+    })
+</script>
 
 </html>

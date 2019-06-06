@@ -98,13 +98,13 @@
                 //render reservations
                 for (var i = 0; i < data.reservations.length; i++) {
                     var reservation = `<li class="list-group-item list-group-item-primary">
-                        Name: ${data.reservations[i].name}</li>`;
+                        Name:  ${data.reservations[i].name} Phone: ${data.reservations[i].phone}        Email: ${data.reservations[i].email}        Id: ${data.reservations[i].id}</li>`;
 
                     $(".reservation").append(reservation);
                 }
                 for (var i = 0; i < data.waitlist.length; i++) {
                     var waitlist = `<li class="list-group-item list-group-item-primary">
-                        Name: ${data.waitlist[i].name}</li>`;
+                        Name: ${data.waitlist[i].name}      Phone: ${data.waitlist[i].phone}        Email: ${data.waitlist[i].email}        Id: ${data.waitlist[i].id}</li>`;
                     $(".waitlist").append(waitlist);
                 }
             })

@@ -53,7 +53,7 @@
                 $.ajax({
                     method: "POST",
                     url: "/api/reserve",
-                    body: obj
+                    data: obj
 
                 }).then((data) => {
                     window.location.assign("/view");

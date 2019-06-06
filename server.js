@@ -10,6 +10,8 @@ var waitlist = [];
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("./css"));
+app.use(express.static("./video"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "html", "home.html"));
@@ -25,23 +27,23 @@ app.get("/reserve", (req, res) => {
 
 app.post("/api/reserve", (req, res) => {
     var reservation = req.body;
-    var reserved;
+
     if (reservations.length === 5) {
         waitlist.push(reservation);
-        reserved = false;
     } else {
         reservations.push(reservation);
-        reserved = true;
     }
-    res.send({ reserved: reserved });
+    res.json({
+        reservations: reservations,
+        waitlist: waitlist
+    });
 });
 
 app.get("/api/view", (req, res) => {
-    var obj = {
+    res.json({
         reservations: reservations,
         waitlist: waitlist
-    }
-    res.send(obj);
+    });
 });
 
 

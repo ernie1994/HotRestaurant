@@ -24,6 +24,43 @@
 </head>
 
 <body>
+    <script>
+        $(document).ready(() => {
+            $(".submit").click(() => {
+                var name = $("#reserve_name")
+                    .val()
+                    .trim();
+
+                var phone = $("#reserve_phone")
+                    .val()
+                    .trim();
+
+                var email = $("#reserve_email")
+                    .val()
+                    .trim();
+
+                var id = $("#reserve_uniqueID")
+                    .val()
+                    .trim();
+
+                var obj = {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    id: id
+                };
+
+                $.ajax({
+                    method: "POST",
+                    url: "/api/reserve",
+                    body: obj
+
+                }).then((data) => {
+                    window.location.assign("/view");
+                });
+            });
+        });
+    </script>
 
     <div class="container">
 
@@ -85,7 +122,7 @@
 
         <footer class="footer">
             <div class="container">
-                <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </p>
+                <p><a href="/api/view">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </p>
             </div>
         </footer>
 
@@ -96,7 +133,7 @@
 </html>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     // In this code below we create the Front-end Javascript which "POSTS" our form data to our express server.
     // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
@@ -149,4 +186,4 @@
 
     });
 
-</script>
+</script> -->

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ernie1994/HotRestaurant/issues"
   },
-  "homepage": "https://github.com/ernie1994/HotRestaurant#readme"
+  "homepage": "https://github.com/ernie1994/HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

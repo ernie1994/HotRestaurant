@@ -1,10 +1,8 @@
 .arrow-box{
-    position: absolute;
-    top: 1%;
-    padding: 4rem;
     height: 20px;
     background-size: cover;
 }
 .arrow-back{
     width: 10%;
+    text-align: left;
 }
